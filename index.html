@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<title> Roll a Dice App </title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: #fffde7; /* soft light yellow */
+    padding: 5vh 2vw;
+}
+
+h1 {
+    color: #4e342e;
+    background-color: #fff9c4;
+    padding: 20px 40px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    font-size: 3vw;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+input[type="submit"] {
+    background-color: #fdd835;
+    color: #3e2723;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #fbc02d;
+    transform: scale(1.05);
+}
+
+img {
+    width: 20vw;
+    border: 5px solid #f0e68c;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: rotate(5deg);
+}
+</style>
+
+	</head>
+	<body>
+		<h1> Roll a Die App </h1>
+		<form onsubmit="show()" >
+			<input type="submit" value="ROLL" />
+		</form>
+		<img id="im1" src="d1.PNG" alt="1" />
+			
+		<script>
+			function show()
+			{
+				event.preventDefault();
+
+				let img=document.getElementById("im1");
+			
+				let die=["d1.PNG","d2.PNG","d3.PNG","d4.PNG","d5.PNG","d6.PNG"];
+
+				let r = parseInt(Math.random()*die.length);
+
+				im1.src=die[r];
+				im1.alt="dice "+(r+1);
+
+				
+			}	
+			
+		</script>
+
+	</body>
+</html>
